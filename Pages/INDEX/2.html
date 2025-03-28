@@ -1,49 +1,42 @@
-<a-entity id="sala" obj-model="obj: ./SALA2/SALA.obj; mtl: ./SALA2/SALA.mtl" position="-41.19 0 -15.700" scale="0.010 0.010 0.010" 
- animation="property: position; to:-41.19 0 -11.250; dur: 3000; loop: false; dir: alternate; autoplay: true; enabled: true;">
-</a-entity>
 
-<a-entity id="checkpoint1">
-<a-entity id="bottom" 
- obj-model="obj: ./checkpoint/bottom-checkpoint.obj" 
- material="color: #00FFFF" 
- position=" -0.250 0 -4.687" 
- scale="0.000030 0.000030 0.000030" 
- rotation="-90.000 0.000 0.000" 
- animation__set0="property: position; to:-0.250 0 0.120; dur: 3000; loop: false; dir: alternate; autoplay: true; enabled: true;"
- animation__set1fade="property: material.opacity; from: 1; to: 0; dur: 3000; loop: false; dir: alternate; autoplay: true; enabled: true;">
-</a-entity>
-
-<a-entity id="anime"  
-animation="property: position; to: 0 0.2 0; dur: 300; loop: true; dir: alternate; autoplay: true; enabled: true;">
-  
-<a-entity id="top"
-          obj-model="obj: ./checkpoint/top-checkpoint.obj"
-          material="color: #00FFFF"
-          position="-0.250 0.950 -4.687"
-          scale="0.000020 0.000030 0.000030"
-          rotation="-90.000 0.000 0.000"
-          animation__set0move="property: position; to: -0.250 0.950 0.120; dur: 3000; loop: false; dir: alternate; autoplay: true; enabled: true;"
-          animation__set0fade="property: material.opacity; from: 1; to: 0; dur: 3000; loop: false; dir: alternate; autoplay: true; enabled: true;">
-</a-entity>
-</a-entity>
-
-</a-entity>
-
-<a-entity id="checkpoint2">
-  <a-entity id="bottom1" obj-model="obj: ./checkpoint/bottom-checkpoint.obj" material="color: #00FFFF" 
-            position="-5.550 0 0.113" scale="0.000030 0.000030 0.000030" rotation="-90.000 0.000 0.000">
-  </a-entity>
-
-    <a-entity id="anime"
-  animation="property: position; to: 0 0.2 0; dur: 300; loop: true; dir: alternate; autoplay: true; enabled: true;">
-    
-    <a-entity bouton_select="top1"    scene-changer="" obj-model="obj: ./checkpoint/top-checkpoint.obj" material="color: #00FFFF"
-              position="-5.550 0.950 0.113" scale="0.000020 0.000030 0.000030" rotation="-90.000 0.000 0.000">
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+<a-scene>
+    <a-entity id="table_complet" position="3.26 0 0.9">
+    <a-entity id="magasin" obj-model="obj: ./table/magasin.obj; mtl: ./table/magasin.mtl" position="-4.41574 -0.00048 -5.06616" scale="0.01 0.01 0.01">
     </a-entity>
-  </a-entity>
-</a-entity>
 
+    <a-entity id="Tel" obj-model="mtl: ./tel_samsung/tel.mtl; obj: ./tel_samsung/tel.obj" position="-3.93869 1.28585 -3.97347" rotation="7.35 -135.87 0.07" scale="0.002 0.002 0.002">
+    </a-entity>
+
+    <a-entity id="Iphone_16" obj-model="mtl: ./tel1/iphone_16.mtl; obj: ./tel1/iphone_16.obj" position="-2.56022 1.17036 -4.00297" rotation="-81.43 140.36 178.49" scale="0.00129 0.00129 0.00129">
+    </a-entity>
+
+    <a-entity id="Iphone_14" obj-model="mtl: ./Iphone/iphone_14_pro.mtl; obj: ./Iphone/iphone_14_pro.obj" position="-3.32647 1.16121 -4.05689" rotation="-80.76 178.31 3.7800000000000002" scale="0.001 0.001 0.001">
+    </a-entity>
+</a-entity>
+</a-scene>
+ 
 
 <a-sky color="#88c"></a-sky>
+
+<a-entity 
+  id="changer"
+  scene-changer="3"
+  geometry="primitive: cylinder; radius: 0.1; height: 0.10"    
+  material="color: #333"
+  position="-0.100 1.100 -4.050"
+  class="raycastable">
+
+  <a-text
+    value="continue"
+    align="center"
+    position="0 0 0.02"
+    color="#FFF"
+    scale="0.5 0.5 0.5">
+  </a-text>
+</a-entity>
+
+
+
 
 

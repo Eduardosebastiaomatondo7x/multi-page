@@ -1,0 +1,33 @@
+# Exported from 3D Builder
+
+newmtl black.002_0
+Kd 0.000000 0.000000 0.000000
+
+newmtl metalframe.002_0
+Kd 0.654902 0.556865 0.462742
+
+newmtl glass.002_0
+Kd 0.906332 0.906332 0.906332
+
+newmtl basecolor.001_0
+Kd 0.710216 0.649213 0.602911
+
+newmtl metaL.001_0
+Kd 0.871681 0.871681 0.871681
+
+newmtl apple_logo.001_0
+Kd 0.659084 0.604723 0.557360
+
+newmtl screen.001_0
+Kd 1.000000 1.000000 1.000000
+map_Kd texture_1_17832851910588591680.png
+
+newmtl Material.001_0
+Kd 0.721579 0.592948 0.228707
+
+newmtl Material_0
+Kd 1.000000 1.000000 1.000000
+map_Kd texture_2_14126322532748253036.png
+
+newmtl gray.001_0
+Kd 0.641593 0.641593 0.641593

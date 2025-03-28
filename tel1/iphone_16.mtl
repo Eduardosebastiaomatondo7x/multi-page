@@ -1,0 +1,9 @@
+# Exported from 3D Builder
+
+newmtl phone16_0
+Kd 1.000000 1.000000 1.000000
+map_Kd texture_0_17832851910588591680.png
+
+newmtl phone16_transparent_0
+Kd 1.000000 1.000000 1.000000
+map_Kd texture_3_6672996682974157280.png

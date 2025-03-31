@@ -1,0 +1,29 @@
+# Exported from 3D Builder
+
+newmtl Flash_0
+Kd 1.000000 1.000000 1.000000
+map_Kd texture_0_17832851910588591680.png
+
+newmtl TestMaterial_0
+Kd 0.529412 0.627451 0.678431
+
+newmtl Grass_0
+Kd 0.000000 0.000000 0.000000
+
+newmtl Black_0
+Kd 0.000000 0.000000 0.000000
+
+newmtl .001_0
+Kd 0.448273 0.523641 0.562832
+
+newmtl Back_0
+Kd 0.529412 0.627451 0.678431
+
+newmtl Labber_0
+Kd 0.320850 0.320850 0.320850
+
+newmtl Lenscover_0
+Kd 0.292920 0.292920 0.292920
+
+newmtl .002_0
+Kd 0.906332 0.906332 0.906332

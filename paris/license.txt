@@ -1,0 +1,11 @@
+Model Information:
+* title:	tour paris promenade
+* source:	https://sketchfab.com/3d-models/tour-paris-promenade-9d9b5dcfd6504ea0b582d36687e10fab
+* author:	amogusstrikesback2 (https://sketchfab.com/amogusstrikesback2)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "tour paris promenade" (https://sketchfab.com/3d-models/tour-paris-promenade-9d9b5dcfd6504ea0b582d36687e10fab) by amogusstrikesback2 (https://sketchfab.com/amogusstrikesback2) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

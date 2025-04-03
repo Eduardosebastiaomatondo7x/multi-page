@@ -19,8 +19,25 @@
     </a-entity>
 </a-entity>
 
-<a-entity id="Avion" gltf-model="./Avion/tesla_musk_e_air_jet_plane.glb" position="0.87972 1.5 -8.7876" scale="0.35 0.35 0.35" rotation="-28.615231162218702 -150.2845378316344 -15.288232847475756">
-      </a-entity>
+<a-scene>
+  <a-entity id="Avion" 
+            gltf-model="./Avion/tesla_musk_e_air_jet_plane.glb" 
+            position="10 1.5 0" 
+            scale="0.35 0.35 0.35"
+            animation__circle="property: position;
+                             dur: 20000;
+                             easing: linear;
+                             loop: true;
+                             dir: normal;
+                             to: 10 1.5 0;
+                             from: -10 1.5 0"
+            animation__rotation="property: rotation;
+                               dur: 20000;
+                               easing: linear;
+                               loop: true;
+                               to: 0 360 0">
+  </a-entity>
+</a-scene>
 
 <a-entity id="changer" scene-changer="3" geometry="primitive: cylinder; radius: 0.1; height: 0.1" material="color: #333" position="-1.27 1.22 -1.61" class="raycastable">
   <a-text value="continue" align="center" position="0 0 0.02" color="#FFF" scale="0.5 0.5 0.5" text="">

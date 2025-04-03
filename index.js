@@ -73,3 +73,41 @@ AFRAME.registerComponent('scene-changer', {
       SwitchArea(this.SceneName)  // Calls the SwitchArea function with the scene name
     }
   })
+
+
+  
+<script>
+// Composant personnalisé pour une trajectoire circulaire plus précise
+AFRAME.registerComponent('circular-flight', {
+  schema: {
+    radius: {type: 'number', default: 10},
+    speed: {type: 'number', default: 1},
+    height: {type: 'number', default: 1.5}
+  },
+  init: function() {
+    this.angle = 0;
+    this.center = new THREE.Vector3(0, this.data.height, 0);
+  },
+  tick: function(time, timeDelta) {
+    this.angle += timeDelta * 0.001 * this.data.speed;
+    
+    // Calcul de la nouvelle position
+    const x = Math.cos(this.angle) * this.data.radius;
+    const z = Math.sin(this.angle) * this.data.radius;
+    this.el.setAttribute('position', {
+      x: x,
+      y: this.data.height,
+      z: z
+    });
+    
+    // Orientation de l'avion dans la direction du mouvement
+    const degrees = -this.angle * (180 / Math.PI) + 90;
+    this.el.setAttribute('rotation', {
+      x: -20 * Math.sin(this.angle), // Inclinaison dans les virages
+      y: degrees,
+      z: 0
+    });
+  }
+});
+</script>
+

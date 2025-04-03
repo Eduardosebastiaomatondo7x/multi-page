@@ -18,13 +18,16 @@
         </a-entity>
 </a-entity>
 
+ <a-scene>
   <!-- Votre bouton 3D avec un composant cliquable -->
-<a-entity id="button" obj-model="mtl: ./button/button/button_-_lowpoly.mtl; obj: ./button/button/button_-_lowpoly.obj"
-    position="0.03771 0.65493 -3.99831" rotation="-80.59568120987238 9.972330424251979 -10.166563116801326"
-    scale="0.0005 0.0005 0.0005"
-            clickable&gt;
-  </a-entity> 
-    
+  <a-entity id="button" 
+            obj-model="mtl: ./button/button/button_-_lowpoly.mtl; obj: ./button/button/button_-_lowpoly.obj"
+            position="-3.32229 1.09493 -3.83831" 
+            rotation="-80.59568120987238 9.972330424251979 -10.166563116801326" 
+            scale="0.002 0.002 0.002"  <!-- J'ai augmenté l'échelle pour meilleure interaction -->
+            clickable>
+  </a-entity>
+
   <!-- Panier à droite (caché initialement) -->
   <a-entity id="cart-panel" position="3 1.5 -4" visible="false">
     <a-box color="#4CC3D9" width="1.5" height="2" depth="0.1"></a-box>
@@ -44,6 +47,8 @@
       <a-box width="0.8" height="0.3" depth="0.01" color="#EF2D5E"></a-box>
       <a-text value="Option 2" align="center" position="0 0 0.02" color="white"></a-text>
     </a-entity>
+  </a-entity>
+</a-scene>
       <a-animation attribute="position" 
              from="-3 1.5 -6" 
              to="-3 1.5 -4" 
@@ -51,7 +56,7 @@
              begin="show"></a-animation>
       <a-entity cursor="rayOrigin: mouse"></a-entity>
       
-  </a-entity>
+
 
 
 

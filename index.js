@@ -76,7 +76,7 @@ AFRAME.registerComponent('scene-changer', {
 
 
   
-<script>
+
 // Composant personnalisé pour une trajectoire circulaire plus précise
 AFRAME.registerComponent('circular-flight', {
   schema: {
@@ -109,5 +109,4 @@ AFRAME.registerComponent('circular-flight', {
     });
   }
 });
-</script>
 

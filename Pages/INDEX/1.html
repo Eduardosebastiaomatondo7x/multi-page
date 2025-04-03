@@ -16,9 +16,40 @@
         rotation="-80.76 178.31 3.7800000000000002" 
         scale="0.001 0.001 0.001">
         </a-entity>
-    <a-entity id="button" obj-model="mtl: ./button/button/button_-_lowpoly.mtl; obj: ./button/button/button_-_lowpoly.obj" position="-3.32229 1.09493 -3.83831" rotation="-80.59568120987238 9.972330424251979 -10.166563116801326" scale="0.0001 0.0001 0.0001">
 </a-entity>
-</a-entity>
+
+<a-scene>
+  <!-- Votre bouton 3D avec un composant cliquable -->
+  <a-entity id="button" 
+            obj-model="mtl: ./button/button/button_-_lowpoly.mtl; obj: ./button/button/button_-_lowpoly.obj"
+            position="-3.32229 1.09493 -3.83831" 
+            rotation="-80.59568120987238 9.972330424251979 -10.166563116801326" 
+            scale="0.002 0.002 0.002"  <!-- J'ai augmenté l'échelle pour meilleure interaction -->
+            clickable>
+  </a-entity>
+
+  <!-- Panier à droite (caché initialement) -->
+  <a-entity id="cart-panel" position="3 1.5 -4" visible="false">
+    <a-box color="#4CC3D9" width="1.5" height="2" depth="0.1"></a-box>
+    <a-text value="PANIER" color="black" align="center" position="0 0.8 0.05"></a-text>
+    <a-text id="cart-items" value="0 articles" position="0 0.4 0.05" color="black"></a-text>
+  </a-entity>
+
+  <!-- Options d'achat à gauche (caché initialement) -->
+  <a-entity id="purchase-options" position="-3 1.5 -4" visible="false">
+    <a-box color="#7BC8A4" width="1.5" height="2" depth="0.1"></a-box>
+    <a-text value="ACHETER" color="black" align="center" position="0 0.8 0.05"></a-text>
+    <a-entity class="option" position="-0.4 0.3 0.05" clickable>
+      <a-box width="0.8" height="0.3" depth="0.01" color="#EF2D5E"></a-box>
+      <a-text value="Option 1" align="center" position="0 0 0.02" color="white"></a-text>
+    </a-entity>
+    <a-entity class="option" position="0.4 0.3 0.05" clickable>
+      <a-box width="0.8" height="0.3" depth="0.01" color="#EF2D5E"></a-box>
+      <a-text value="Option 2" align="center" position="0 0 0.02" color="white"></a-text>
+    </a-entity>
+  </a-entity>
+</a-scene> 
+
 
    <a-entity 
     id="ma_tete"

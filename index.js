@@ -137,6 +137,7 @@ AFRAME.registerComponent('circular-flight', {
       alert(`Option "${e.target.querySelector('a-text').getAttribute('value')}" sélectionnée!`);
     });
   });
+localStorage.setItem('cartCount', currentCount + 1);
 
 
 

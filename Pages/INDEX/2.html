@@ -35,13 +35,9 @@
                                dur: 20000;
                                easing: linear;
                                loop: true;
-                               to: 0 360 0">
+                               to: 0 360 0"
+                circular-flight="radius: 15; speed: 0.5; height: 3">
   </a-entity>
-    <a-entity id="Avion" 
-          gltf-model="./Avion/tesla_musk_e_air_jet_plane.glb" 
-          scale="0.35 0.35 0.35"
-          circular-flight="radius: 15; speed: 0.5; height: 3">
-</a-entity>
 </a-scene>
 
 <a-entity id="changer" scene-changer="3" geometry="primitive: cylinder; radius: 0.1; height: 0.1" material="color: #333" position="-1.27 1.22 -1.61" class="raycastable">

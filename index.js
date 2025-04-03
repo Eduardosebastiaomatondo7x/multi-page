@@ -110,5 +110,35 @@ AFRAME.registerComponent('circular-flight', {
 });
 
 
+ AFRAME.registerComponent('clickable', {
+    init: function() {
+      this.el.addEventListener('click', () => {
+        // Basculer la visibilité des panneaux
+        const cartPanel = document.getElementById('cart-panel');
+        const purchasePanel = document.getElementById('purchase-options');
+        
+        cartPanel.setAttribute('visible', !cartPanel.getAttribute('visible'));
+        purchasePanel.setAttribute('visible', !purchasePanel.getAttribute('visible'));
+        
+        // Mettre à jour le compteur du panier
+        if (cartPanel.getAttribute('visible')) {
+          const cartCounter = document.getElementById('cart-items');
+          const currentCount = parseInt(cartCounter.getAttribute('value')) || 0;
+          cartCounter.setAttribute('value', `${currentCount + 1} articles`);
+        }
+      });
+    }
+  });
+
+  // Pour les options d'achat
+  document.querySelectorAll('.option').forEach(option => {
+    option.addEventListener('click', (e) => {
+      e.stopPropagation(); // Empêche le déclenchement du clic parent
+      alert(`Option "${e.target.querySelector('a-text').getAttribute('value')}" sélectionnée!`);
+    });
+  });
+
+
+
   
 

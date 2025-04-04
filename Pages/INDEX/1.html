@@ -66,23 +66,7 @@
              dur="500" 
              begin="show"></a-animation>
 
-
-    <a-scene cursor="rayOrigin: mouse">
-  <a-box id="button" position="0 1.5 -2" color="red" clickable></a-box>
-  <a-entity id="purchase-options" visible="false">Test</a-entity>
-</a-scene>
-<script>
-  AFRAME.registerComponent('clickable', {
-    init: function() {
-      this.el.addEventListener('click', () => {
-        console.log("CLICK !");
-        document.querySelector('#purchase-options').setAttribute('visible', true);
-      });
-    }
-  });
-</script>  
-
-
+  
 
 
    <a-entity 

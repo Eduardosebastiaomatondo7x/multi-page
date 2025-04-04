@@ -138,19 +138,7 @@ AFRAME.registerComponent('circular-flight', {
     });
   });
 localStorage.setItem('cartCount', currentCount + 1);
-AFRAME.registerComponent('clickable', {
-  init: function () {
-    this.el.addEventListener('mouseenter', () => {
-      this.el.setAttribute('scale', '0.0025 0.0025 0.0025');
-    });
-    this.el.addEventListener('mouseleave', () => {
-      this.el.setAttribute('scale', '0.002 0.002 0.002');
-    });
-    this.el.addEventListener('click', () => {
-      // Votre logique ici
-    });
-  }
-});
+
 
 
   

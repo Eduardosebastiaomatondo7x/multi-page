@@ -142,7 +142,6 @@ localStorage.setItem('cartCount', currentCount + 1);
 
 
   <!-- Script de gestion -->
-  <script>
     // Composant clickable
     AFRAME.registerComponent('clickable', {
       init: function() {
@@ -183,8 +182,7 @@ localStorage.setItem('cartCount', currentCount + 1);
         });
       }
     });
-  </script>
-</a-scene>
+
 
 
 

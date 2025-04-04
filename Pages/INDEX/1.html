@@ -83,7 +83,98 @@
     scale="0.491 0.491 0.491"
     animation="property: position; to: -84.864 -46.250 -120.142; dur: 3000; loop: true; dir: alternate">
 </a-entity>
- 
+
+ <a-scene cursor="rayOrigin: mouse">
+  <!-- Bouton principal d'achat -->
+  <a-entity id="buy-button" 
+            position="0 1.5 -2"
+            geometry="primitive: box"
+            material="color: #EF2D5E"
+            scale="0.3 0.1 0.2"
+            clickable>
+    <a-text value="ACHETER" align="center" position="0 0 0.1" color="white"></a-text>
+  </a-entity>
+
+  <!-- Panneau de commande (caché initialement) -->
+  <a-entity id="order-panel" position="0 1.5 -3" visible="false">
+    <a-plane color="#FAFAFA" width="2" height="1.5">
+      <!-- Titre -->
+      <a-text value="COMMANDER:" align="center" position="0 0.6 0.01" color="black" width="3"></a-text>
+      
+      <!-- Champ Email -->
+      <a-entity position="-0.7 0.2 0.01">
+        <a-plane color="#EEEEEE" width="1.4" height="0.2"></a-plane>
+        <a-text value="Email:" position="-0.65 0 0.01" color="black"></a-text>
+        <a-input id="email-input" type="text" width="1.2" placeholder="votre@email.com"></a-input>
+      </a-entity>
+      
+      <!-- Option Bitcoin -->
+      <a-entity id="bitcoin-option" position="0 -0.2 0.01" clickable>
+        <a-plane color="#FF9900" width="1.5" height="0.3"></a-plane>
+        <a-text value="Payer avec Bitcoin" align="center" position="0 0 0.01" color="white"></a-text>
+      </a-entity>
+      
+      <!-- Bouton Valider -->
+      <a-entity id="validate-btn" position="0 -0.6 0.01" clickable>
+        <a-plane color="#7BC8A4" width="1" height="0.3"></a-plane>
+        <a-text value="VALIDER" align="center" position="0 0 0.01" color="white"></a-text>
+      </a-entity>
+    </a-plane>
+  </a-entity>
+
+  <!-- Panneau de remerciement (caché initialement) -->
+  <a-entity id="thank-you-panel" position="0 1.5 -3" visible="false">
+    <a-plane color="#E8F5E9" width="2" height="1.5">
+      <a-text value="MERCI POUR VOTRE ACHAT !" align="center" position="0 0.3 0.01" color="green" width="3"></a-text>
+      <a-text id="order-details" value="" align="center" position="0 -0.2 0.01" color="black" width="2.5"></a-text>
+    </a-plane>
+  </a-entity>
+
+  <!-- Script de gestion -->
+  <script>
+    // Composant clickable
+    AFRAME.registerComponent('clickable', {
+      init: function() {
+        this.el.addEventListener('click', this.onClick.bind(this));
+      },
+      onClick: function() {
+        if (this.el.id === 'buy-button') {
+          document.querySelector('#order-panel').setAttribute('visible', true);
+        }
+        else if (this.el.id === 'bitcoin-option') {
+          this.el.setAttribute('material', 'color', '#F7931A');
+          alert("Option Bitcoin sélectionnée");
+        }
+        else if (this.el.id === 'validate-btn') {
+          const email = document.querySelector('#email-input').value;
+          if (!email.includes('@')) {
+            alert("Email invalide");
+            return;
+          }
+          
+          document.querySelector('#order-panel').setAttribute('visible', false);
+          const thankYouPanel = document.querySelector('#thank-you-panel');
+          thankYouPanel.setAttribute('visible', true);
+          
+          document.querySelector('#order-details').setAttribute('value', 
+            `Votre commande sera envoyée à:\n${email}\n\nMéthode: Bitcoin`);
+        }
+      }
+    });
+
+    // Composant input (simplifié)
+    AFRAME.registerComponent('input', {
+      schema: { type: 'string', default: '' },
+      init: function() {
+        this.el.addEventListener('click', () => {
+          const value = prompt("Entrez votre email:");
+          if (value) this.el.setAttribute('value', value);
+        });
+      }
+    });
+  </script>
+</a-scene>
+
 
 
 

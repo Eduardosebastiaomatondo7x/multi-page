@@ -19,15 +19,13 @@
 </a-entity>
 
  <a-scene>
-     <a-entity camera look-controls>
-  <a-entity cursor="rayOrigin: mouse"></a-entity>
 </a-entity>
   <!-- Votre bouton 3D avec un composant cliquable (taille inchangée) -->
   <a-entity id="button" 
             obj-model="mtl: ./button/button/button_-_lowpoly.mtl; obj: ./button/button/button_-_lowpoly.obj" 
             position="0.008 0.895 -1.46831" 
             rotation="-80.59568120987238 9.972330424251979 -10.166563116801326" 
-            scale="0.0002 0.0002 0.0002"
+            scale="0.0002 0.0002 0.0002" class="raycastable"
             clickable>
   </a-entity>
 

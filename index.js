@@ -141,5 +141,52 @@ localStorage.setItem('cartCount', currentCount + 1);
 
 
 
+  <!-- Script de gestion -->
+  <script>
+    // Composant clickable
+    AFRAME.registerComponent('clickable', {
+      init: function() {
+        this.el.addEventListener('click', this.onClick.bind(this));
+      },
+      onClick: function() {
+        if (this.el.id === 'buy-button') {
+          document.querySelector('#order-panel').setAttribute('visible', true);
+        }
+        else if (this.el.id === 'bitcoin-option') {
+          this.el.setAttribute('material', 'color', '#F7931A');
+          alert("Option Bitcoin sélectionnée");
+        }
+        else if (this.el.id === 'validate-btn') {
+          const email = document.querySelector('#email-input').value;
+          if (!email.includes('@')) {
+            alert("Email invalide");
+            return;
+          }
+          
+          document.querySelector('#order-panel').setAttribute('visible', false);
+          const thankYouPanel = document.querySelector('#thank-you-panel');
+          thankYouPanel.setAttribute('visible', true);
+          
+          document.querySelector('#order-details').setAttribute('value', 
+            `Votre commande sera envoyée à:\n${email}\n\nMéthode: Bitcoin`);
+        }
+      }
+    });
+
+    // Composant input (simplifié)
+    AFRAME.registerComponent('input', {
+      schema: { type: 'string', default: '' },
+      init: function() {
+        this.el.addEventListener('click', () => {
+          const value = prompt("Entrez votre email:");
+          if (value) this.el.setAttribute('value', value);
+        });
+      }
+    });
+  </script>
+</a-scene>
+
+
+
   
 
